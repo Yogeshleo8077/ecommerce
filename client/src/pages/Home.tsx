@@ -38,13 +38,13 @@ const Home: React.FC = () => {
             />
           </div>
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 flex flex-col items-center text-center">
-            <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
               Discover Our Latest Collection
             </h1>
-            <p className="mt-6 max-w-2xl text-xl text-gray-300">
+            <p className="mt-4 sm:mt-6 max-w-2xl text-base sm:text-xl text-gray-300">
               Upgrade your lifestyle with our premium selection of electronics, accessories, and home goods. Handpicked quality for the modern consumer.
             </p>
-            <div className="mt-10 flex gap-4">
+            <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto px-6 sm:px-0">
               <a href="#featured-products">
                 <Button size="lg" variant="primary">Shop Now</Button>
               </a>
@@ -59,9 +59,9 @@ const Home: React.FC = () => {
       )}
 
       {/* Featured Products */}
-      <section id="featured-products" className="scroll-mt-24">
-        <div className="flex items-center justify-between mb-8">
-          <h2 className="text-3xl font-bold text-gray-900 tracking-tight">
+      <section id="featured-products" className="scroll-mt-24 px-2 sm:px-0">
+        <div className="flex items-center justify-between mb-6 sm:mb-8 px-2 sm:px-0">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">
             {keyword ? `Search Results for "${keyword}"` : 'Featured Products'}
           </h2>
           {!keyword && (
@@ -92,7 +92,7 @@ const Home: React.FC = () => {
 
             {/* Product Grid */}
             <div className="flex-1">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-8">
                 {products.length > 0 ? (
                   products.map((product) => (
                     <ProductCard key={product._id} product={product} />

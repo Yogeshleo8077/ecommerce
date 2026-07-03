@@ -50,7 +50,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           </div>
         )}
       </Link>
-      <div className="p-5 flex flex-col flex-grow">
+      <div className="p-3 sm:p-5 flex flex-col flex-grow">
         <div className="flex items-center space-x-1 mb-2">
           {Array.from({ length: 5 }).map((_, i) => (
             <svg 
@@ -65,22 +65,22 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           <span className="text-xs text-gray-500 ml-1">({product.numReviews})</span>
         </div>
         <Link to={`/product/${product._id}`}>
-          <h3 className="text-lg font-semibold text-gray-900 line-clamp-2 mb-1 cursor-pointer hover:text-primary-600 transition-colors">
+          <h3 className="text-sm sm:text-lg font-semibold text-gray-900 line-clamp-2 mb-1 cursor-pointer hover:text-primary-600 transition-colors leading-tight">
             {product.name}
           </h3>
         </Link>
-        <p className="text-sm text-gray-500 line-clamp-2 mb-4 flex-grow">
+        <p className="text-xs sm:text-sm text-gray-500 line-clamp-2 mb-2 sm:mb-4 flex-grow hidden sm:block">
           {product.description}
         </p>
-        <div className="flex items-center justify-between mt-auto gap-2">
-          <span className="text-xl font-bold text-gray-900">₹{product.price.toFixed(2)}</span>
+        <div className="flex items-center justify-between mt-auto gap-1 sm:gap-2">
+          <span className="text-sm sm:text-xl font-bold text-gray-900">₹{product.price.toFixed(0)}</span>
           <Button 
             onClick={handleAddToCart} 
             disabled={product.stock === 0}
             size="sm"
-            className="whitespace-nowrap"
+            className="whitespace-nowrap px-2 py-1 sm:px-4 sm:py-2 text-[10px] sm:text-sm"
           >
-            Add to Cart
+            Add
           </Button>
         </div>
       </div>
