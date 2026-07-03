@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { type RootState, type AppDispatch } from '../store/store';
-import { updateUserProfile, clearError } from '../store/slices/authSlice';
+import { updateUserProfile } from '../store/slices/authSlice';
 import { getMyOrders } from '../store/slices/orderSlice';
 import { Input } from '../components/ui/Input';
 import { Button } from '../components/ui/Button';
