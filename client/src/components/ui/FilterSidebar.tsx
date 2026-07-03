@@ -12,6 +12,7 @@ export const FilterSidebar: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [filters, setFilters] = useState<Filters>({ categories: [], brands: [] });
   const [isLoading, setIsLoading] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   // Local state for inputs
   const [minPrice, setMinPrice] = useState(searchParams.get('minPrice') || '');
@@ -77,11 +78,29 @@ export const FilterSidebar: React.FC = () => {
   }
 
   return (
-    <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-8">
+    <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-gray-100">
       <div className="flex justify-between items-center">
-        <h3 className="font-bold text-lg text-gray-900">Filters</h3>
-        <button onClick={clearFilters} className="text-sm text-primary-600 hover:text-primary-700">Clear All</button>
+        <h3 className="font-bold text-lg text-gray-900 flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+          </svg>
+          Filters
+        </h3>
+        <div className="flex items-center gap-4">
+          <button onClick={clearFilters} className="text-sm font-medium text-primary-600 hover:text-primary-700 hidden sm:block">Clear All</button>
+          <button 
+            onClick={() => setIsOpen(!isOpen)} 
+            className="sm:hidden bg-primary-50 text-primary-600 px-3 py-1 rounded-md text-sm font-medium"
+          >
+            {isOpen ? 'Hide' : 'Show'}
+          </button>
+        </div>
       </div>
+
+      <div className={`mt-6 space-y-6 ${isOpen ? 'block' : 'hidden'} sm:block`}>
+        <div className="sm:hidden flex justify-end">
+          <button onClick={clearFilters} className="text-sm font-medium text-red-500 hover:text-red-600">Clear Filters</button>
+        </div>
 
       {/* Sort */}
       <div className="space-y-3">
@@ -163,6 +182,7 @@ export const FilterSidebar: React.FC = () => {
         <Button onClick={handlePriceApply} className="w-full mt-2" variant="outline" size="sm">
           Apply Price
         </Button>
+      </div>
       </div>
     </div>
   );
