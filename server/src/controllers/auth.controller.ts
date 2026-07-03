@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { AuthRequest } from '../middleware/auth.middleware';
 import { User } from '../models/user.model';
 import { generateTokens } from '../utils/jwt';
 import { logger } from '../utils/logger';
