@@ -37,14 +37,14 @@ const Home: React.FC = () => {
               alt="Store background"
             />
           </div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 flex flex-col items-center text-center">
-            <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-24 lg:py-32 flex flex-col items-center text-center">
+            <h1 className="text-2xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white">
               Discover Our Latest Collection
             </h1>
-            <p className="mt-4 sm:mt-6 max-w-2xl text-base sm:text-xl text-gray-300">
+            <p className="mt-3 sm:mt-6 max-w-2xl text-sm sm:text-xl text-gray-300 px-2 sm:px-0">
               Upgrade your lifestyle with our premium selection of electronics, accessories, and home goods. Handpicked quality for the modern consumer.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto px-6 sm:px-0">
+            <div className="mt-6 sm:mt-8 flex flex-row gap-3 w-full sm:w-auto justify-center">
               <a href="#featured-products">
                 <Button size="lg" variant="primary">Shop Now</Button>
               </a>
